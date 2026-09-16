@@ -1,35 +1,1786 @@
-ZEVORA
-Home
-Top Up
-Orders
-Support
-FAST • SIMPLE • GAMING SERVICES
-Power Up
-Your Game.
-ZEVORA gaming top-up service. Choose a game and select your package.
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#08060f">
+<title>ZEVORA — Gaming Services</title>
 
-Top Up Now
-View Prices
-Services
-Choose a service
-🎮
-PUBG Mobile UC
-UC top-up packages.
+<style>
+:root{
+  --bg:#07060d;
+  --panel:rgba(18,15,29,.88);
+  --line:#2a2140;
+  --purple:#8b5cf6;
+  --purple2:#a855f7;
+  --text:#f7f5ff;
+  --muted:#aaa4ba;
+  --green:#67e8a5;
+}
 
-View PUBG
-🟥
-Roblox Robux
-Robux top-up packages.
+*{
+  box-sizing:border-box;
+}
 
-View Roblox
-💬
-Customer Support
-Need help with an order?
+html{
+  scroll-behavior:smooth;
+}
 
-Contact
-ZEVORA
-Fast • Simple • Gaming Services
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 80% 0%,#24104a 0,#0b0813 30%,#07060d 65%);
+  color:var(--text);
+  font-family:
+    Inter,ui-sans-serif,system-ui,-apple-system,
+    BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
 
-WhatsApp: 0175314055
+button,input{
+  font:inherit;
+}
 
-© 2026 ZEVORA
+button{
+  cursor:pointer;
+}
+
+.app{
+  min-height:100vh;
+}
+
+/* NAV */
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(7,6,13,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.navin{
+  max-width:1150px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.brand{
+  border:0;
+  background:none;
+  font-size:25px;
+  font-weight:950;
+  letter-spacing:4px;
+  color:#fff;
+  margin-right:auto;
+}
+
+.navlinks{
+  display:flex;
+  gap:4px;
+}
+
+.nav button{
+  border:0;
+  background:none;
+  color:#d8d3e4;
+  padding:9px 10px;
+  border-radius:10px;
+}
+
+.nav button:hover{
+  background:#171222;
+  color:#fff;
+}
+
+.hamb{
+  display:none;
+}
+
+/* MAIN */
+
+main{
+  max-width:1150px;
+  margin:auto;
+  padding:38px 20px 70px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:410px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:30px;
+}
+
+.eyebrow{
+  color:#b99cff;
+  letter-spacing:3px;
+  font-weight:800;
+  font-size:12px;
+}
+
+.hero h1{
+  font-size:clamp(45px,7vw,78px);
+  line-height:.96;
+  margin:14px 0;
+  background:linear-gradient(
+    100deg,#fff 25%,#b68cff 70%,#8b5cf6
+  );
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  font-size:18px;
+  color:var(--muted);
+  max-width:540px;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.btn{
+  border:1px solid #3b2b59;
+  background:#151022;
+  color:#fff;
+  border-radius:13px;
+  padding:13px 18px;
+  font-weight:800;
+  transition:.15s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  border-color:#8b5cf6;
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  box-shadow:0 10px 30px #7c3aed33;
+}
+
+.heroCard{
+  height:330px;
+  border:1px solid #3c2a5e;
+  border-radius:26px;
+  background:linear-gradient(145deg,#171022,#0c0912);
+  box-shadow:0 0 70px #7c3aed25;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  position:relative;
+}
+
+.orb{
+  width:210px;
+  height:210px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,#c084fc,#6d28d9 45%,transparent 68%
+    );
+  filter:blur(2px);
+  box-shadow:0 0 100px #9333ea;
+}
+
+.heroCard:after{
+  content:"ZEVORA";
+  position:absolute;
+  font-size:65px;
+  font-weight:1000;
+  letter-spacing:8px;
+  opacity:.07;
+}
+
+/* TITLES */
+
+.sectionTitle{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:10px;
+  margin:45px 0 18px;
+}
+
+.sectionTitle h2{
+  margin:0;
+  font-size:29px;
+}
+
+.sectionTitle span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:20px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 15px 40px #0003;
+}
+
+.card h3{
+  margin:10px 0 7px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.icon{
+  font-size:30px;
+}
+
+/* PAGES */
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* GAME TABS */
+
+.gameTabs{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+
+.gameTab{
+  border:1px solid #382b50;
+  background:#100c18;
+  color:#ddd6eb;
+  border-radius:14px;
+  padding:13px 20px;
+  font-weight:850;
+}
+
+.gameTab.active{
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  border-color:#a78bfa;
+  color:#fff;
+}
+
+/* PRICES */
+
+.prices{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.price{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.price strong{
+  font-size:20px;
+}
+
+.rm{
+  color:#c4b5fd;
+  font-weight:900;
+  margin-top:5px;
+}
+
+.priceIcon{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+/* FORM */
+
+.form{
+  max-width:700px;
+  margin:auto;
+}
+
+.field{
+  margin:14px 0;
+}
+
+.field label{
+  display:block;
+  color:#d9d4e3;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.field input{
+  width:100%;
+  padding:13px 14px;
+  border-radius:12px;
+  border:1px solid #342b45;
+  background:#0d0a14;
+  color:#fff;
+  outline:none;
+}
+
+.field input:focus{
+  border-color:#8b5cf6;
+}
+
+.field input:disabled{
+  color:#aaa4ba;
+}
+
+/* PAYMENT */
+
+.paygrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+}
+
+.payopt{
+  border:1px solid #30263f;
+  background:#0e0b15;
+  padding:14px;
+  border-radius:12px;
+  cursor:pointer;
+  text-align:center;
+}
+
+.payopt.selected{
+  border-color:#9b6cff;
+  background:#1a102b;
+}
+
+.summary{
+  background:#0c0912;
+  border:1px solid #2e2540;
+  border-radius:15px;
+  padding:16px;
+  margin:18px 0;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:8px 0;
+  color:#bdb6ca;
+}
+
+.row b{
+  color:#fff;
+  text-align:right;
+}
+
+.qrbox{
+  display:grid;
+  place-items:center;
+  background:#fff;
+  border-radius:18px;
+  padding:15px;
+  max-width:330px;
+  margin:20px auto;
+}
+
+.qrbox img{
+  width:100%;
+  display:block;
+  border-radius:10px;
+}
+
+.qrName{
+  text-align:center;
+  color:#111;
+  font-weight:800;
+  margin-top:10px;
+}
+
+.manual{
+  color:#f0d58a;
+  font-size:13px;
+  background:#241d0b;
+  border:1px solid #55451c;
+  padding:11px;
+  border-radius:10px;
+}
+
+/* TIMELINE */
+
+.timeline{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin:25px 0;
+}
+
+.step{
+  flex:1;
+  text-align:center;
+  color:#777;
+  font-size:12px;
+}
+
+.dot{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  border:1px solid #433755;
+  margin:0 auto 7px;
+  display:grid;
+  place-items:center;
+}
+
+.step.active{
+  color:#c4b5fd;
+}
+
+.step.active .dot{
+  background:#7c3aed;
+  border-color:#a78bfa;
+  color:#fff;
+  box-shadow:0 0 18px #8b5cf655;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 20px;
+  color:#8f889d;
+  text-align:center;
+  font-size:13px;
+}
+
+.footerBrand{
+  font-weight:950;
+  letter-spacing:4px;
+  color:#c4b5fd;
+}
+
+/* TOAST */
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#171221;
+  border:1px solid #493563;
+  padding:12px 16px;
+  border-radius:12px;
+  display:none;
+  z-index:50;
+}
+
+/* MOBILE */
+
+@media(max-width:760px){
+
+  .navin{
+    padding:12px 15px;
+  }
+
+  .navlinks{
+    display:none;
+  }
+
+  .hamb{
+    display:block;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding:25px 0;
+  }
+
+  .heroCard{
+    height:220px;
+  }
+
+  .grid,
+  .prices{
+    grid-template-columns:1fr;
+  }
+
+  .paygrid{
+    grid-template-columns:1fr;
+  }
+
+  .timeline{
+    gap:2px;
+  }
+
+  .timeline .step{
+    font-size:10px;
+  }
+
+  .hero h1{
+    font-size:53px;
+  }
+
+  main{
+    padding:22px 15px 55px;
+  }
+
+  .sectionTitle{
+    margin-top:35px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="nav">
+  <div class="navin">
+
+    <button class="brand" onclick="go('home')">
+      ZEVORA
+    </button>
+
+    <div class="navlinks">
+      <button onclick="go('home')">Home</button>
+      <button onclick="go('topup')">Top Up</button>
+      <button onclick="go('orders')">Orders</button>
+      <button onclick="go('support')">Support</button>
+    </div>
+
+    <button class="hamb" onclick="toggleNav()">☰</button>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+  <div class="hero">
+
+    <div>
+
+      <div class="eyebrow">
+        FAST • SECURE • TRUSTED GAMING SERVICES
+      </div>
+
+      <h1>
+        Power Up<br>
+        Your Game.
+      </h1>
+
+      <p>
+        Fast and convenient gaming services,
+        built with a clean and simple order flow.
+      </p>
+
+      <div class="actions">
+
+        <button
+          class="btn primary"
+          onclick="go('topup')">
+          Top Up Now
+        </button>
+
+        <button
+          class="btn"
+          onclick="go('topup')">
+          View Prices
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="heroCard">
+      <div class="orb"></div>
+    </div>
+
+  </div>
+
+
+  <div class="sectionTitle">
+    <h2>Services</h2>
+    <span>Choose a service to get started</span>
+  </div>
+
+
+  <div class="grid">
+
+    <div class="card">
+
+      <div class="icon">🎮</div>
+
+      <h3>PUBG Mobile UC</h3>
+
+      <p>
+        PUBG Mobile UC top-up service.
+      </p>
+
+      <button
+        class="btn primary"
+        onclick="openGame('pubg')">
+        View PUBG
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🟥</div>
+
+      <h3>Roblox Robux</h3>
+
+      <p>
+        Roblox Robux top-up service.
+      </p>
+
+      <button
+        class="btn primary"
+        onclick="openGame('roblox')">
+        View Roblox
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">💬</div>
+
+      <h3>Customer Support</h3>
+
+      <p>
+        Need help with an order?
+      </p>
+
+      <button
+        class="btn"
+        onclick="go('support')">
+        Contact Support
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TOP UP -->
+
+<section id="topup" class="page">
+
+  <div class="sectionTitle">
+
+    <h2>Game Top Up</h2>
+
+    <span>
+      Select your game
+    </span>
+
+  </div>
+
+
+  <div class="gameTabs">
+
+    <button
+      id="tabPubg"
+      class="gameTab active"
+      onclick="openGame('pubg')">
+      🎮 PUBG Mobile
+    </button>
+
+    <button
+      id="tabRoblox"
+      class="gameTab"
+      onclick="openGame('roblox')">
+      🟥 Roblox
+    </button>
+
+  </div>
+
+
+  <!-- PUBG -->
+
+  <div id="pubgPrices">
+
+    <div class="sectionTitle">
+      <h2>PUBG Mobile UC</h2>
+      <span>All prices include service fees.</span>
+    </div>
+
+    <div class="prices">
+
+      <div class="card price">
+        <div>
+          <div class="priceIcon">🪙</div>
+          <strong>325 UC</strong>
+          <div class="rm">RM 22.00</div>
+        </div>
+        <button
+          class="btn primary"
+          onclick="startCheckout('PUBG Mobile','325 UC',22)">
+          Buy Now
+        </button>
+      </div>
+
+
+      <div class="card price">
+        <div>
+          <div class="priceIcon">🪙</div>
+          <strong>660 UC</strong>
+          <div class="rm">RM 39.50</div>
+        </div>
+        <button
+          class="btn primary"
+          onclick="startCheckout('PUBG Mobile','660 UC',39.50)">
+          Buy Now
+        </button>
+      </div>
+
+
+      <div class="card price">
+        <div>
+          <div class="priceIcon">🪙</div>
+          <strong>1800 UC</strong>
+          <div class="rm">RM 96.00</div>
+        </div>
+        <button
+          class="btn primary"
+          onclick="startCheckout('PUBG Mobile','1800 UC',96)">
+          Buy Now
+        </button>
+      </div>
+
+
+      <div class="card price">
+        <div>
+          <div class="priceIcon">🪙</div>
+          <strong>3850 UC</strong>
+          <div class="rm">RM 195.00</div>
+        </div>
+        <button
+          class="btn primary"
+          onclick="startCheckout('PUBG Mobile','3850 UC',195)">
+          Buy Now
+        </button>
+      </div>
+
+
+      <div class="card price">
+        <div>
+          <div class="priceIcon">🪙</div>
+          <strong>8100 UC</strong>
+          <div class="rm">RM 390.00</div>
+        </div>
+        <button
+          class="btn primary"
+          onclick="startCheckout('PUBG Mobile','8100 UC',390)">
+          Buy Now
+        </button>
+      </div>
+
+
+      <div class="card price">
+        <div>
+          <div class="priceIcon">🪙</div>
+          <strong>16200 UC</strong>
+          <div class="rm">RM 792.61</div>
+        </div>
+        <button
+          class="btn primary"
+          onclick="startCheckout('PUBG Mobile','16200 UC',792.61)">
+          Buy Now
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ROBLOX -->
+
+  <div id="robloxPrices" style="display:none">
+
+    <div class="sectionTitle">
+      <h2>Roblox Robux</h2>
+      <span>All prices include service fees.</span>
+    </div>
+
+    <div class="prices">
+
+      <div class="card price">
+
+        <div>
+          <div class="priceIcon">🟥</div>
+          <strong>240 Robux</strong>
+          <div class="rm">RM 13.00</div>
+        </div>
+
+        <button
+          class="btn primary"
+          onclick="startCheckout('Roblox','240 Robux',13)">
+          Buy Now
+        </button>
+
+      </div>
+
+
+      <div class="card price">
+
+        <div>
+          <div class="priceIcon">🟥</div>
+          <strong>1,000 Robux</strong>
+          <div class="rm">RM 47.00</div>
+        </div>
+
+        <button
+          class="btn primary"
+          onclick="startCheckout('Roblox','1,000 Robux',47)">
+          Buy Now
+        </button>
+
+      </div>
+
+
+      <div class="card price">
+
+        <div>
+          <div class="priceIcon">🟥</div>
+          <strong>2,000 Robux</strong>
+          <div class="rm">RM 85.00</div>
+        </div>
+
+        <button
+          class="btn primary"
+          onclick="startCheckout('Roblox','2,000 Robux',85)">
+          Buy Now
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CHECKOUT -->
+
+<section id="checkout" class="page">
+
+  <div class="form">
+
+    <div class="sectionTitle">
+      <h2>Create Order</h2>
+      <span>Order information</span>
+    </div>
+
+
+    <div class="card">
+
+      <div class="field">
+        <label>Game</label>
+        <input id="game" disabled>
+      </div>
+
+
+      <div class="field">
+        <label>Product</label>
+        <input id="product" disabled>
+      </div>
+
+
+      <div class="field">
+        <label>Player ID / UID</label>
+        <input
+          id="uid"
+          placeholder="Enter your UID">
+      </div>
+
+
+      <div class="field">
+        <label>Player Name / Username</label>
+        <input
+          id="pname"
+          placeholder="Enter your player name">
+      </div>
+
+
+      <div class="field">
+        <label>Contact</label>
+        <input
+          id="contact"
+          placeholder="WhatsApp / Telegram / phone">
+      </div>
+
+
+      <div class="field">
+
+        <label>Payment Method</label>
+
+        <div class="paygrid">
+
+          <div
+            class="payopt"
+            data-pay="DuitNow QR"
+            onclick="choosePay(this)">
+            DuitNow QR
+          </div>
+
+          <div
+            class="payopt"
+            data-pay="Touch 'n Go eWallet"
+            onclick="choosePay(this)">
+            Touch 'n Go
+          </div>
+
+          <div
+            class="payopt"
+            data-pay="Online Banking"
+            onclick="choosePay(this)">
+            Online Banking
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="summary"
+        id="checkoutSummary">
+      </div>
+
+
+      <button
+        class="btn primary"
+        onclick="createOrder()">
+        Continue to Payment
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PAYMENT -->
+
+<section id="payment" class="page">
+
+  <div class="form">
+
+    <div class="sectionTitle">
+      <h2>Payment</h2>
+      <span>Complete your payment</span>
+    </div>
+
+
+    <div class="card">
+
+      <div
+        class="summary"
+        id="paymentSummary">
+      </div>
+
+
+      <div class="qrbox">
+
+        <!--
+        如果你之后要放真正的 QR，
+        把下面的 YOUR_QR_IMAGE_HERE
+        换成你的 QR 图片文件路径。
+        -->
+
+        <img
+          src="YOUR_QR_IMAGE_HERE"
+          alt="ZEVORA Payment QR">
+
+        <div class="qrName">
+          CHUA MING ZSE
+        </div>
+
+      </div>
+
+
+      <div class="manual">
+        请完成付款后，保存付款凭证。
+        然后提交付款凭证。
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Payment Receipt
+        </label>
+
+        <input
+          type="file"
+          id="receipt"
+          accept="image/*">
+
+      </div>
+
+
+      <button
+        class="btn primary"
+        onclick="submitPayment()">
+        Submit Payment
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STATUS -->
+
+<section id="status" class="page">
+
+  <div class="form">
+
+    <div class="sectionTitle">
+      <h2>Order Status</h2>
+      <span>Your order has been created</span>
+    </div>
+
+
+    <div class="card">
+
+      <div
+        class="timeline">
+
+        <div class="step active">
+          <div class="dot">1</div>
+          Order
+        </div>
+
+        <div class="step active">
+          <div class="dot">2</div>
+          Payment
+        </div>
+
+        <div class="step">
+          <div class="dot">3</div>
+          Processing
+        </div>
+
+        <div class="step">
+          <div class="dot">4</div>
+          Complete
+        </div>
+
+      </div>
+
+
+      <div
+        class="summary"
+        id="statusSummary">
+      </div>
+
+
+      <button
+        class="btn primary"
+        onclick="go('home')">
+        Back Home
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ORDERS -->
+
+<section id="orders" class="page">
+
+  <div class="form">
+
+    <div class="sectionTitle">
+      <h2>Customer Orders</h2>
+      <span>Check your local order</span>
+    </div>
+
+
+    <div class="card">
+
+      <div class="field">
+
+        <label>
+          Enter Order Number
+        </label>
+
+        <input
+          id="lookup"
+          placeholder="Example: ZEV-10001">
+
+      </div>
+
+
+      <button
+        class="btn primary"
+        onclick="lookupOrder()">
+        Check Order
+      </button>
+
+
+      <div id="lookupResult"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SUPPORT -->
+
+<section id="support" class="page">
+
+  <div class="form">
+
+    <div class="sectionTitle">
+      <h2>Support</h2>
+      <span>We're here to help</span>
+    </div>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="icon">💬</div>
+
+        <h3>WhatsApp</h3>
+
+        <p>
+          Need help with your order?
+        </p>
+
+        <button
+          class="btn primary"
+          onclick="contactWhatsApp()">
+          Contact ZEVORA
+        </button>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="icon">📞</div>
+
+        <h3>Phone</h3>
+
+        <p>
+          0175314055
+        </p>
+
+        <button
+          class="btn"
+          onclick="contactWhatsApp()">
+          WhatsApp
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="footerBrand">
+    ZEVORA
+  </div>
+
+  <p>
+    Fast • Secure • Trusted Gaming Services
+  </p>
+
+  <p>
+    Home · Top Up · Orders · Support
+  </p>
+
+  <p>
+    © 2026 ZEVORA. All rights reserved.
+  </p>
+
+</footer>
+
+
+<div
+  class="toast"
+  id="toast">
+</div>
+
+
+<script>
+
+let selected=null;
+let payment=null;
+let current=null;
+
+const $ = id =>
+  document.getElementById(id);
+
+
+/* MONEY */
+
+function money(n){
+  return "RM " + Number(n).toFixed(2);
+}
+
+
+/* NAVIGATION */
+
+function go(id){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(x =>
+      x.classList.remove("active")
+    );
+
+  const page=$(id);
+
+  if(page){
+    page.classList.add("active");
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+  const nav=document.querySelector(".navlinks");
+
+  if(nav){
+    nav.style.display="";
+  }
+
+  updateSummary();
+}
+
+
+/* MOBILE MENU */
+
+function toggleNav(){
+
+  const n=
+    document.querySelector(".navlinks");
+
+  if(
+    n.style.display==="flex"
+  ){
+    n.style.display="none";
+  }else{
+
+    n.style.display="flex";
+    n.style.position="absolute";
+    n.style.top="62px";
+    n.style.right="15px";
+    n.style.flexDirection="column";
+    n.style.background="#100c18";
+    n.style.padding="10px";
+    n.style.border="1px solid #302440";
+    n.style.borderRadius="12px";
+  }
+}
+
+
+/* GAME SELECT */
+
+function openGame(game){
+
+  go("topup");
+
+  const pubg=
+    $("pubgPrices");
+
+  const roblox=
+    $("robloxPrices");
+
+  const tabPubg=
+    $("tabPubg");
+
+  const tabRoblox=
+    $("tabRoblox");
+
+
+  if(game==="roblox"){
+
+    pubg.style.display="none";
+    roblox.style.display="block";
+
+    tabPubg.classList.remove("active");
+    tabRoblox.classList.add("active");
+
+  }else{
+
+    pubg.style.display="block";
+    roblox.style.display="none";
+
+    tabPubg.classList.add("active");
+    tabRoblox.classList.remove("active");
+
+  }
+}
+
+
+/* START CHECKOUT */
+
+function startCheckout(
+  game,
+  product,
+  price
+){
+
+  selected={
+    game:game,
+    product:product,
+    price:price
+  };
+
+  $("game").value=game;
+  $("product").value=product;
+
+  payment=null;
+
+  document
+    .querySelectorAll(".payopt")
+    .forEach(x =>
+      x.classList.remove("selected")
+    );
+
+  updateSummary();
+
+  go("checkout");
+}
+
+
+/* PAYMENT METHOD */
+
+function choosePay(el){
+
+  document
+    .querySelectorAll(".payopt")
+    .forEach(x =>
+      x.classList.remove("selected")
+    );
+
+  el.classList.add("selected");
+
+  payment=
+    el.dataset.pay;
+
+  updateSummary();
+}
+
+
+/* CHECKOUT SUMMARY */
+
+function updateSummary(){
+
+  if(!selected){
+    return;
+  }
+
+  const box=
+    $("checkoutSummary");
+
+  if(!box){
+    return;
+  }
+
+  box.innerHTML=`
+
+    <div class="row">
+      <span>Game</span>
+      <b>${selected.game}</b>
+    </div>
+
+    <div class="row">
+      <span>Product</span>
+      <b>${selected.product}</b>
+    </div>
+
+    <div class="row">
+      <span>Total Amount</span>
+      <b>${money(selected.price)}</b>
+    </div>
+
+    <div class="row">
+      <span>Payment Method</span>
+      <b>${payment || "Not selected"}</b>
+    </div>
+
+  `;
+}
+
+
+/* CREATE ORDER */
+
+function createOrder(){
+
+  if(!selected){
+    toast("Please select a product.");
+    return;
+  }
+
+  if(
+    !$("uid").value.trim() ||
+    !$("pname").value.trim() ||
+    !$("contact").value.trim() ||
+    !payment
+  ){
+
+    toast(
+      "Please complete all fields and select a payment method."
+    );
+
+    return;
+  }
+
+
+  const next=
+    Number(
+      localStorage.getItem("zevoraSeq")
+      || 10000
+    ) + 1;
+
+
+  localStorage.setItem(
+    "zevoraSeq",
+    next
+  );
+
+
+  current={
+
+    number:"ZEV-"+next,
+
+    game:selected.game,
+
+    product:selected.product,
+
+    amount:selected.price,
+
+    date:
+      new Date()
+      .toLocaleDateString(),
+
+    uid:
+      $("uid").value.trim(),
+
+    name:
+      $("pname").value.trim(),
+
+    contact:
+      $("contact").value.trim(),
+
+    payment:payment,
+
+    status:"Waiting for Payment"
+
+  };
+
+
+  localStorage.setItem(
+    "order_"+current.number,
+    JSON.stringify(current)
+  );
+
+
+  showPayment();
+}
+
+
+/* PAYMENT PAGE */
+
+function showPayment(){
+
+  $("paymentSummary").innerHTML=`
+
+    <div class="row">
+      <span>Order Number</span>
+      <b>${current.number}</b>
+    </div>
+
+    <div class="row">
+      <span>Game</span>
+      <b>${current.game}</b>
+    </div>
+
+    <div class="row">
+      <span>Product</span>
+      <b>${current.product}</b>
+    </div>
+
+    <div class="row">
+      <span>Player UID</span>
+      <b>${current.uid}</b>
+    </div>
+
+    <div class="row">
+      <span>Amount</span>
+      <b>${money(current.amount)}</b>
+    </div>
+
+    <div class="row">
+      <span>Payment Method</span>
+      <b>${current.payment}</b>
+    </div>
+
+  `;
+
+  go("payment");
+}
+
+
+/* SUBMIT PAYMENT */
+
+function submitPayment(){
+
+  const f=
+    $("receipt").files[0];
+
+  if(!f){
+
+    toast(
+      "Please select your payment receipt image."
+    );
+
+    return;
+  }
+
+
+  current.status=
+    "Payment Received";
+
+
+  localStorage.setItem(
+    "order_"+current.number,
+    JSON.stringify(current)
+  );
+
+
+  $("statusSummary").innerHTML=`
+
+    <div class="row">
+      <span>Order Number</span>
+      <b>${current.number}</b>
+    </div>
+
+    <div class="row">
+      <span>Game</span>
+      <b>${current.game}</b>
+    </div>
+
+    <div class="row">
+      <span>Product</span>
+      <b>${current.product}</b>
+    </div>
+
+    <div class="row">
+      <span>Amount</span>
+      <b>${money(current.amount)}</b>
+    </div>
+
+    <div class="row">
+      <span>Payment Status</span>
+      <b>Receipt Submitted</b>
+    </div>
+
+  `;
+
+
+  document
+    .querySelectorAll(".timeline .step")
+    .forEach((x,i)=>
+      x.classList.toggle(
+        "active",
+        i<2
+      )
+    );
+
+
+  go("status");
+}
+
+
+/* ORDER LOOKUP */
+
+function lookupOrder(){
+
+  const id=
+    $("lookup")
+    .value
+    .trim()
+    .toUpperCase();
+
+
+  if(!id){
+
+    toast(
+      "Please enter an order number."
+    );
+
+    return;
+  }
+
+
+  let o=
+    JSON.parse(
+      localStorage.getItem(
+        "order_"+id
+      ) || "null"
+    );
+
+
+  const box=
+    $("lookupResult");
+
+
+  if(o){
+
+    box.innerHTML=`
+
+      <div class="summary">
+
+        <div class="row">
+          <span>Order Number</span>
+          <b>${o.number}</b>
+        </div>
+
+        <div class="row">
+          <span>Game</span>
+          <b>${o.game}</b>
+        </div>
+
+        <div class="row">
+          <span>Product</span>
+          <b>${o.product}</b>
+        </div>
+
+        <div class="row">
+          <span>Amount</span>
+          <b>${money(o.amount)}</b>
+        </div>
+
+        <div class="row">
+          <span>Date</span>
+          <b>${o.date}</b>
+        </div>
+
+        <div class="row">
+          <span>Status</span>
+          <b>${o.status}</b>
+        </div>
+
+      </div>
+
+    `;
+
+  }else{
+
+    box.innerHTML=`
+
+      <p
+        style="
+        color:#aaa4ba;
+        margin-top:18px;
+        ">
+
+        No order found.
+
+      </p>
+
+    `;
+  }
+}
+
+
+/* WHATSAPP */
+
+function contactWhatsApp(){
+
+  window.location.href=
+    "https://wa.me/60175314055";
+
+}
+
+
+/* TOAST */
+
+function toast(t){
+
+  const box=
+    $("toast");
+
+  box.textContent=t;
+
+  box.style.display="block";
+
+  setTimeout(
+    () =>
+      box.style.display="none",
+    2600
+  );
+}
+
+
+/* START */
+
+openGame("pubg");
+
+</script>
+
+</div>
+
+</body>
+</html>
