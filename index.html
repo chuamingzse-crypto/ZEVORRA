@@ -2,127 +2,773 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#08060f">
-<title>ZEVORA | Gaming Top Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZEVORA | Gaming Services</title>
+
 <style>
-:root{--bg:#07060d;--panel:#12101b;--line:#2a2140;--purple:#8b5cf6;--text:#f7f5ff;--muted:#aaa4ba}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 80% 0%,#24104a,#07060d 55%);color:var(--text);font-family:Arial,system-ui,sans-serif}
-button,input{font:inherit}button{cursor:pointer}
-.nav{position:sticky;top:0;z-index:10;background:#07060de8;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
-.navin{max-width:1100px;margin:auto;padding:15px 20px;display:flex;align-items:center}
-.brand{border:0;background:none;color:white;font-weight:900;font-size:24px;letter-spacing:4px;margin-right:auto}
-.navlinks{display:flex;gap:5px}.nav button{border:0;background:none;color:#ddd6eb;padding:9px 11px;border-radius:10px}.nav button:hover{background:#181222;color:white}
-main{max-width:1100px;margin:auto;padding:35px 20px 70px}.page{display:none}.page.active{display:block}
-.hero{min-height:390px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}.eyebrow{color:#b99cff;font-weight:800;letter-spacing:2px;font-size:12px}
-h1{font-size:clamp(45px,7vw,78px);line-height:.95;margin:15px 0;background:linear-gradient(100deg,#fff,#b68cff,#8b5cf6);-webkit-background-clip:text;color:transparent}
-h2{margin:0 0 8px;font-size:30px}p{color:var(--muted)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.btn{border:1px solid #3b2b59;background:#151022;color:#fff;border-radius:13px;padding:12px 17px;font-weight:800}.primary{border-color:#8b5cf6;background:linear-gradient(135deg,#7c3aed,#a855f7)}
-.heroCard{height:310px;border:1px solid #3c2a5e;border-radius:25px;background:linear-gradient(145deg,#171022,#0c0912);display:grid;place-items:center;box-shadow:0 0 70px #7c3aed25}.orb{width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,#c084fc,#6d28d9 45%,transparent 68%);box-shadow:0 0 100px #9333ea}
-.sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:42px 0 18px}.sectionTitle span{color:var(--muted);font-size:13px}
-.grid,.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#12101be8;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 15px 40px #0003}.icon,.priceIcon{font-size:30px}.card h3{margin:10px 0 7px}
-.gameTabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.gameTab{border:1px solid #382b50;background:#100c18;color:#ddd6eb;border-radius:14px;padding:12px 18px;font-weight:850}.gameTab.active{background:linear-gradient(135deg,#7c3aed,#a855f7);color:white}
-.price{display:flex;align-items:center;justify-content:space-between;gap:12px}.price strong{font-size:20px}.rm{color:#c4b5fd;font-weight:900;margin-top:6px}
-.form{max-width:700px;margin:auto}.field{margin:14px 0}label{display:block;color:#d9d4e3;font-size:13px;font-weight:700;margin-bottom:7px}
-input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid #342b45;background:#0d0a14;color:#fff;outline:none}input:focus{border-color:#8b5cf6}input:disabled{color:#aaa4ba}
-.paygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.payopt{border:1px solid #30263f;background:#0e0b15;padding:13px;border-radius:12px;text-align:center}.payopt.selected{border-color:#9b6cff;background:#1a102b}
-.summary{background:#0c0912;border:1px solid #2e2540;border-radius:15px;padding:15px;margin:18px 0}.row{display:flex;justify-content:space-between;gap:15px;padding:8px 0;color:#bdb6ca}.row b{color:#fff;text-align:right}
-.qrbox{display:grid;place-items:center;background:white;border-radius:18px;padding:15px;max-width:340px;margin:20px auto}.qrbox img{width:100%;display:block;border-radius:10px}.qrName{color:#111;font-weight:800;margin-top:10px;text-align:center}
-.notice{color:#f0d58a;font-size:13px;background:#241d0b;border:1px solid #55451c;padding:11px;border-radius:10px}
-.timeline{display:flex;justify-content:space-between;gap:8px;margin:25px 0}.step{flex:1;text-align:center;color:#777;font-size:12px}.dot{width:30px;height:30px;border-radius:50%;border:1px solid #433755;margin:0 auto 7px;display:grid;place-items:center}.step.active{color:#c4b5fd}.step.active .dot{background:#7c3aed;border-color:#a78bfa;color:white}
-footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;color:#8f889d;font-size:13px}.footerBrand{font-weight:950;letter-spacing:4px;color:#c4b5fd}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#171221;border:1px solid #493563;padding:12px 16px;border-radius:12px;display:none;z-index:50}
-@media(max-width:760px){.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto}.heroCard{height:220px}.grid,.prices{grid-template-columns:1fr}.paygrid{grid-template-columns:1fr}main{padding:22px 15px 55px}}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    min-height:100vh;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(5,5,5,.95);
+    border-bottom:1px solid #222;
+    backdrop-filter:blur(10px);
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:900;
+    letter-spacing:4px;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+    font-size:14px;
+}
+
+.nav-links a{
+    color:#aaa;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.hero{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 20px 70px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:60px;
+    font-weight:900;
+    letter-spacing:7px;
+}
+
+.hero p{
+    color:#999;
+    margin-top:15px;
+    font-size:16px;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:8px;
+    font-weight:bold;
+    border:1px solid #444;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-main{
+    background:#fff;
+    color:#000;
+}
+
+.btn-dark{
+    background:#111;
+    color:#fff;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.section{
+    padding:50px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:32px;
+    font-weight:900;
+}
+
+.section-title p{
+    color:#777;
+    margin-top:8px;
+}
+
+.category{
+    margin-top:35px;
+}
+
+.category-title{
+    font-size:23px;
+    font-weight:800;
+    margin-bottom:18px;
+    padding-left:12px;
+    border-left:3px solid #fff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:12px;
+    padding:22px;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:#555;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.card .price{
+    font-size:25px;
+    font-weight:900;
+    margin-top:15px;
+}
+
+.card p{
+    color:#888;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.service-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.service-price{
+    font-size:22px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.contact-box{
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:14px;
+    padding:35px 20px;
+    text-align:center;
+}
+
+.phone{
+    font-size:30px;
+    font-weight:900;
+    margin:15px 0 25px;
+    letter-spacing:1px;
+}
+
+.qr-box{
+    margin:25px auto 0;
+    width:220px;
+    height:220px;
+    background:#fff;
+    border-radius:12px;
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.qr-box img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+}
+
+.qr-placeholder{
+    color:#000;
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.review{
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:12px;
+    padding:22px;
+}
+
+.stars{
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+
+.review p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+.review-name{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.cta{
+    text-align:center;
+    padding:70px 20px;
+}
+
+.cta h2{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:#888;
+    margin-bottom:25px;
+}
+
+footer{
+    border-top:1px solid #222;
+    text-align:center;
+    padding:30px 20px;
+    color:#666;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+    .nav{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:21px;
+        letter-spacing:3px;
+    }
+
+    .nav-links{
+        gap:10px;
+        font-size:11px;
+    }
+
+    .hero{
+        padding:65px 20px 50px;
+    }
+
+    .hero h1{
+        font-size:42px;
+        letter-spacing:5px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .section{
+        padding:35px 0;
+    }
+
+    .section-title h2{
+        font-size:27px;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .card{
+        padding:17px;
+    }
+
+    .card h3{
+        font-size:15px;
+    }
+
+    .card .price{
+        font-size:20px;
+    }
+
+    .service-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .service-price{
+        font-size:21px;
+    }
+
+    .phone{
+        font-size:24px;
+    }
+}
+
+@media(max-width:430px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links a:nth-child(2){
+        display:none;
+    }
+
+    .hero h1{
+        font-size:37px;
+    }
+}
 </style>
 </head>
+
 <body>
-<header class="nav"><div class="navin">
-<button class="brand" onclick="go('home')">ZEVORA</button>
-<div class="navlinks"><button onclick="go('home')">Home</button><button onclick="go('topup')">Top Up</button><button onclick="go('orders')">Orders</button><button onclick="go('support')">Support</button></div>
-</div></header>
 
-<main>
-<section id="home" class="page active">
-<div class="hero"><div>
-<div class="eyebrow">FAST • SIMPLE • GAMING SERVICES</div>
-<h1>Power Up<br>Your Game.</h1>
-<p>ZEVORA gaming top-up service. Choose a game and select your package.</p>
-<div class="actions"><button class="btn primary" onclick="openGame('pubg')">Top Up Now</button><button class="btn" onclick="go('topup')">View Prices</button></div>
-</div><div class="heroCard"><div class="orb"></div></div></div>
-<div class="sectionTitle"><h2>Services</h2><span>Choose a service</span></div>
-<div class="grid">
-<div class="card"><div class="icon">🎮</div><h3>PUBG Mobile UC</h3><p>UC top-up packages.</p><button class="btn primary" onclick="openGame('pubg')">View PUBG</button></div>
-<div class="card"><div class="icon">🟥</div><h3>Roblox Robux</h3><p>Robux top-up packages.</p><button class="btn primary" onclick="openGame('roblox')">View Roblox</button></div>
-<div class="card"><div class="icon">💬</div><h3>Customer Support</h3><p>Need help with an order?</p><button class="btn" onclick="go('support')">Contact</button></div>
+<header>
+    <div class="nav">
+
+        <div class="logo">
+            ZEVORA
+        </div>
+
+        <div class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="#services">服务</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">联系</a>
+        </div>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <h1>ZEVORA</h1>
+
+    <p>
+        GAMING • TOP UP • SERVICES
+    </p>
+
+    <div class="hero-buttons">
+
+        <a class="btn btn-main" href="#shop">
+            查看服务
+        </a>
+
+        <a class="btn btn-dark"
+           href="https://wa.me/60175314055"
+           target="_blank">
+            联系客服
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="container" id="shop">
+
+<section class="section">
+
+    <div class="section-title">
+        <h2>🎮 GAMING TOP UP</h2>
+        <p>快速 · 方便 · 可靠</p>
+    </div>
+
+
+    <!-- PUBG -->
+
+    <div class="category">
+
+        <div class="category-title">
+            PUBG MOBILE
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>325 UC</h3>
+                <p>PUBG Mobile UC Top Up</p>
+                <div class="price">RM22</div>
+            </div>
+
+            <div class="card">
+                <h3>660 UC</h3>
+                <p>PUBG Mobile UC Top Up</p>
+                <div class="price">RM39.50</div>
+            </div>
+
+            <div class="card">
+                <h3>1800 UC</h3>
+                <p>PUBG Mobile UC Top Up</p>
+                <div class="price">RM96</div>
+            </div>
+
+            <div class="card">
+                <h3>3850 UC</h3>
+                <p>PUBG Mobile UC Top Up</p>
+                <div class="price">RM195</div>
+            </div>
+
+            <div class="card">
+                <h3>8100 UC</h3>
+                <p>PUBG Mobile UC Top Up</p>
+                <div class="price">RM390</div>
+            </div>
+
+            <div class="card">
+                <h3>16200 UC</h3>
+                <p>PUBG Mobile UC Top Up</p>
+                <div class="price">RM792.61</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ROBLOX -->
+
+    <div class="category">
+
+        <div class="category-title">
+            ROBLOX
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>240 Robux</h3>
+                <p>Roblox Top Up</p>
+                <div class="price">RM12.10</div>
+            </div>
+
+            <div class="card">
+                <h3>320 Robux</h3>
+                <p>Roblox Top Up</p>
+                <div class="price">RM16</div>
+            </div>
+
+            <div class="card">
+                <h3>500 Robux</h3>
+                <p>Roblox Top Up</p>
+                <div class="price">RM25</div>
+            </div>
+
+            <div class="card">
+                <h3>800 Robux</h3>
+                <p>Roblox Top Up</p>
+                <div class="price">RM38</div>
+            </div>
+
+            <div class="card">
+                <h3>1000 Robux</h3>
+                <p>Roblox Top Up</p>
+                <div class="price">RM47</div>
+            </div>
+
+            <div class="card">
+                <h3>2000 Robux</h3>
+                <p>Roblox Top Up</p>
+                <div class="price">RM93</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+    <div class="section-title">
+
+        <h2>🛠️ 服务类</h2>
+
+        <p>
+            需要其它服务可以联系客服
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card service-card">
+
+            <div>
+                <h3>网站制作</h3>
+                <p>
+                    简单个人 / 商业网站制作
+                </p>
+            </div>
+
+            <div class="service-price">
+                RM25
+            </div>
+
+        </div>
+
+
+        <div class="card service-card">
+
+            <div>
+                <h3>打广告</h3>
+                <p>
+                    广告发布服务
+                </p>
+            </div>
+
+            <div class="service-price">
+                RM20
+            </div>
+
+        </div>
+
+
+        <div class="card service-card">
+
+            <div>
+                <h3>其它</h3>
+                <p>
+                    其它服务请联系客服咨询
+                </p>
+            </div>
+
+            <a class="btn btn-main"
+               href="https://wa.me/60175314055"
+               target="_blank">
+                联系客服
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PAYMENT -->
+
+<section class="section" id="contact">
+
+    <div class="section-title">
+
+        <h2>💳 PAYMENT</h2>
+
+        <p>
+            付款前请先联系客服确认订单
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h3>联系客服</h3>
+
+        <div class="phone">
+            017 531 4055
+        </div>
+
+
+        <a class="btn btn-main"
+           href="https://wa.me/60175314055"
+           target="_blank">
+            WhatsApp 客服
+        </a>
+
+
+        <div class="qr-box">
+
+            <!--
+            把你的 QR 图片命名为 qr.png
+            然后和 index.html 放在同一个文件夹
+            -->
+
+            <img src="qr.png"
+                 alt="ZEVORA Payment QR"
+                 onerror="this.style.display='none';document.getElementById('qrText').style.display='block';">
+
+            <div id="qrText"
+                 class="qr-placeholder"
+                 style="display:none;">
+                PAYMENT QR<br><br>
+                请将你的 QR 图片命名为<br>
+                <b>qr.png</b>
+            </div>
+
+        </div>
+
+        <p style="margin-top:15px;color:#777;">
+            ZEVORA PAYMENT QR
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CUSTOMER REVIEWS -->
+
+<section class="section" id="reviews">
+
+    <div class="section-title">
+
+        <h2>⭐ CUSTOMER REVIEWS</h2>
+
+        <p>
+            顾客评价
+        </p>
+
+    </div>
+
+
+    <div class="review-grid">
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                服务很快，充值完成后马上收到。
+            </p>
+
+            <div class="review-name">
+                Customer
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                回复速度很快，价格也很清楚。
+            </p>
+
+            <div class="review-name">
+                Customer
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                交易过程简单，服务不错。
+            </p>
+
+            <div class="review-name">
+                Customer
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>需要服务？</h2>
+
+    <p>
+        欢迎联系 ZEVORA
+    </p>
+
+    <a class="btn btn-main"
+       href="https://wa.me/60175314055"
+       target="_blank">
+        立即联系客服
+    </a>
+
+</section>
+
 </div>
-</section>
 
-<section id="topup" class="page">
-<div class="sectionTitle"><h2>Game Top Up</h2><span>Select your game</span></div>
-<div class="gameTabs"><button id="tabPubg" class="gameTab active" onclick="openGame('pubg')">🎮 PUBG Mobile</button><button id="tabRoblox" class="gameTab" onclick="openGame('roblox')">🟥 Roblox</button></div>
-<div id="pubgPrices"><div class="sectionTitle"><h2>PUBG Mobile UC</h2><span>Prices in RM</span></div><div class="prices" id="pubgList"></div></div>
-<div id="robloxPrices" style="display:none"><div class="sectionTitle"><h2>Roblox Robux</h2><span>Prices in RM</span></div><div class="prices" id="robloxList"></div></div>
-</section>
 
-<section id="checkout" class="page"><div class="form"><div class="sectionTitle"><h2>Create Order</h2><span>Order information</span></div><div class="card">
-<div class="field"><label>Game</label><input id="game" disabled></div>
-<div class="field"><label>Product</label><input id="product" disabled></div>
-<div class="field"><label>Player ID / UID</label><input id="uid" placeholder="Enter UID"></div>
-<div class="field"><label>Player Name / Username</label><input id="pname" placeholder="Enter name"></div>
-<div class="field"><label>Contact</label><input id="contact" placeholder="WhatsApp / phone"></div>
-<div class="field"><label>Payment Method</label><div class="paygrid"><div class="payopt" data-pay="Touch 'n Go" onclick="choosePay(this)">Touch 'n Go</div><div class="payopt" data-pay="DuitNow QR" onclick="choosePay(this)">DuitNow QR</div><div class="payopt" data-pay="Online Banking" onclick="choosePay(this)">Online Banking</div></div></div>
-<div class="summary" id="checkoutSummary"></div><button class="btn primary" onclick="createOrder()">Continue to Payment</button>
-</div></div></section>
+<footer>
 
-<section id="payment" class="page"><div class="form"><div class="sectionTitle"><h2>Payment</h2><span>Payment QR</span></div><div class="card">
-<div class="summary" id="paymentSummary"></div>
-<div class="qrbox"><img src="data:image/jpeg;base64,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" alt="ZEVORA Payment QR"><div class="qrName">CHUA MING ZSE</div></div>
-<div class="notice">付款后请保存付款凭证，然后上传付款截图。</div>
-<div class="field"><label>Payment Receipt</label><input type="file" id="receipt" accept="image/*"></div>
-<button class="btn primary" onclick="submitPayment()">Submit Payment</button>
-</div></div></section>
+    © 2026 ZEVORA
+    <br><br>
+    Gaming Top Up • Services
 
-<section id="status" class="page"><div class="form"><div class="sectionTitle"><h2>Order Status</h2><span>Order created</span></div><div class="card">
-<div class="timeline"><div class="step active"><div class="dot">1</div>Order</div><div class="step active"><div class="dot">2</div>Payment</div><div class="step"><div class="dot">3</div>Processing</div><div class="step"><div class="dot">4</div>Complete</div></div>
-<div class="summary" id="statusSummary"></div><button class="btn primary" onclick="go('home')">Back Home</button>
-</div></div></section>
+</footer>
 
-<section id="orders" class="page"><div class="form"><div class="sectionTitle"><h2>Orders</h2><span>Check local order</span></div><div class="card">
-<div class="field"><label>Order Number</label><input id="lookup" placeholder="Example: ZEV-10001"></div><button class="btn primary" onclick="lookupOrder()">Check Order</button><div id="lookupResult"></div>
-</div></div></section>
 
-<section id="support" class="page"><div class="form"><div class="sectionTitle"><h2>Support</h2><span>Contact ZEVORA</span></div><div class="grid">
-<div class="card"><div class="icon">💬</div><h3>WhatsApp</h3><p>0175314055</p><button class="btn primary" onclick="contactWhatsApp()">WhatsApp</button></div>
-</div></div></section>
-</main>
-
-<footer><div class="footerBrand">ZEVORA</div><p>Fast • Simple • Gaming Services</p><p>WhatsApp: 0175314055</p><p>© 2026 ZEVORA</p></footer>
-<div class="toast" id="toast"></div>
-
-<script>
-const pubg=[["325 UC",22],["660 UC",39.50],["1800 UC",96],["3850 UC",195],["8100 UC",390],["16200 UC",792.61]];
-const roblox=[["240 Robux",13],["1000 Robux",47],["2000 Robux",85]];
-let selected=null,payment=null,current=null;
-const $=id=>document.getElementById(id);
-const money=n=>"RM "+Number(n).toFixed(2);
-
-function go(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");scrollTo(0,0);updateSummary()}
-function openGame(game){go("topup");$("pubgPrices").style.display=game==="pubg"?"block":"none";$("robloxPrices").style.display=game==="roblox"?"block":"none";$("tabPubg").classList.toggle("active",game==="pubg");$("tabRoblox").classList.toggle("active",game==="roblox")}
-function render(){
-$("pubgList").innerHTML=pubg.map((p,i)=>`<div class="card price"><div><div class="priceIcon">🪙</div><strong>${p[0]}</strong><div class="rm">${money(p[1])}</div></div><button class="btn primary" onclick="startCheckout('PUBG Mobile',${i})">Buy Now</button></div>`).join("");
-$("robloxList").innerHTML=roblox.map((p,i)=>`<div class="card price"><div><div class="priceIcon">🟥</div><strong>${p[0]}</strong><div class="rm">${money(p[1])}</div></div><button class="btn primary" onclick="startCheckout('Roblox',${i})">Buy Now</button></div>`).join("");
-}
-function startCheckout(game,i){let list=game==="Roblox"?roblox:pubg;selected={game,product:list[i][0],price:list[i][1]};payment=null;$("game").value=game;$("product").value=selected.product;document.querySelectorAll(".payopt").forEach(x=>x.classList.remove("selected"));updateSummary();go("checkout")}
-function choosePay(el){document.querySelectorAll(".payopt").forEach(x=>x.classList.remove("selected"));el.classList.add("selected");payment=el.dataset.pay;updateSummary()}
-function updateSummary(){if(!selected)return;let h=`<div class="row"><span>Game</span><b>${selected.game}</b></div><div class="row"><span>Product</span><b>${selected.product}</b></div><div class="row"><span>Total</span><b>${money(selected.price)}</b></div><div class="row"><span>Payment</span><b>${payment||"Not selected"}</b></div>`;if($("checkoutSummary"))$("checkoutSummary").innerHTML=h}
-function createOrder(){if(!$("uid").value.trim()||!$("pname").value.trim()||!$("contact").value.trim()||!payment){toast("Please complete all fields and select payment.");return}let n=Number(localStorage.getItem("zevoraSeq")||10000)+1;localStorage.setItem("zevoraSeq",n);current={number:"ZEV-"+n,game:selected.game,product:selected.product,amount:selected.price,date:new Date().toLocaleDateString(),uid:$("uid").value.trim(),name:$("pname").value.trim(),contact:$("contact").value.trim(),payment,status:"Waiting for Payment"};localStorage.setItem("order_"+current.number,JSON.stringify(current));showPayment()}
-function showPayment(){$("paymentSummary").innerHTML=`<div class="row"><span>Order Number</span><b>${current.number}</b></div><div class="row"><span>Game</span><b>${current.game}</b></div><div class="row"><span>Product</span><b>${current.product}</b></div><div class="row"><span>UID</span><b>${current.uid}</b></div><div class="row"><span>Amount</span><b>${money(current.amount)}</b></div><div class="row"><span>Payment</span><b>${current.payment}</b></div>`;go("payment")}
-function submitPayment(){if(!$("receipt").files[0]){toast("Please select your payment receipt.");return}current.status="Payment Received";localStorage.setItem("order_"+current.number,JSON.stringify(current));$("statusSummary").innerHTML=`<div class="row"><span>Order Number</span><b>${current.number}</b></div><div class="row"><span>Game</span><b>${current.game}</b></div><div class="row"><span>Product</span><b>${current.product}</b></div><div class="row"><span>Amount</span><b>${money(current.amount)}</b></div><div class="row"><span>Status</span><b>Receipt Submitted</b></div>`;go("status")}
-function lookupOrder(){let id=$("lookup").value.trim().toUpperCase(),o=JSON.parse(localStorage.getItem("order_"+id)||"null");$("lookupResult").innerHTML=o?`<div class="summary"><div class="row"><span>Order</span><b>${o.number}</b></div><div class="row"><span>Game</span><b>${o.game}</b></div><div class="row"><span>Product</span><b>${o.product}</b></div><div class="row"><span>Amount</span><b>${money(o.amount)}</b></div><div class="row"><span>Status</span><b>${o.status}</b></div></div>`:`<p>No order found.</p>`}
-function contactWhatsApp(){location.href="https://wa.me/60175314055"}
-function toast(t){$("toast").textContent=t;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2500)}
-render();
-</script>
 </body>
 </html>
