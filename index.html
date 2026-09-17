@@ -2,375 +2,359 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ZEVORA | Gaming Services</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial,Helvetica,sans-serif
+}
+
+html{
+scroll-behavior:smooth
 }
 
 body{
-    background:#050505;
-    color:#fff;
-    min-height:100vh;
+background:#050505;
+color:#fff;
+min-height:100vh
 }
 
 a{
-    text-decoration:none;
-    color:inherit;
+text-decoration:none;
+color:inherit
 }
 
 header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(5,5,5,.95);
-    border-bottom:1px solid #222;
-    backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(5,5,5,.96);
+border-bottom:1px solid #222
 }
 
 .nav{
-    max-width:1100px;
-    margin:auto;
-    padding:18px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+max-width:1100px;
+margin:auto;
+padding:18px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center
 }
 
 .logo{
-    font-size:26px;
-    font-weight:900;
-    letter-spacing:4px;
+font-size:26px;
+font-weight:900;
+letter-spacing:4px
 }
 
 .nav-links{
-    display:flex;
-    gap:20px;
-    font-size:14px;
+display:flex;
+gap:20px;
+font-size:14px
 }
 
 .nav-links a{
-    color:#aaa;
-    transition:.2s;
+color:#aaa
 }
 
 .nav-links a:hover{
-    color:#fff;
+color:#fff
 }
 
 .hero{
-    max-width:1100px;
-    margin:auto;
-    padding:90px 20px 70px;
-    text-align:center;
+max-width:1100px;
+margin:auto;
+padding:90px 20px 70px;
+text-align:center
 }
 
 .hero h1{
-    font-size:60px;
-    font-weight:900;
-    letter-spacing:7px;
+font-size:60px;
+font-weight:900;
+letter-spacing:7px
 }
 
 .hero p{
-    color:#999;
-    margin-top:15px;
-    font-size:16px;
+color:#999;
+margin-top:15px;
+font-size:16px
 }
 
 .hero-buttons{
-    margin-top:30px;
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap
 }
 
 .btn{
-    display:inline-block;
-    padding:13px 25px;
-    border-radius:8px;
-    font-weight:bold;
-    border:1px solid #444;
-    transition:.2s;
+display:inline-block;
+padding:13px 25px;
+border-radius:8px;
+font-weight:bold;
+border:1px solid #444;
+transition:.2s
 }
 
 .btn:hover{
-    transform:translateY(-2px);
+transform:translateY(-2px)
 }
 
 .btn-main{
-    background:#fff;
-    color:#000;
+background:#fff;
+color:#000
 }
 
 .btn-dark{
-    background:#111;
-    color:#fff;
+background:#111;
+color:#fff
 }
 
 .container{
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
+max-width:1100px;
+margin:auto;
+padding:20px
 }
 
 .section{
-    padding:50px 0;
+padding:50px 0
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:30px;
+text-align:center;
+margin-bottom:30px
 }
 
 .section-title h2{
-    font-size:32px;
-    font-weight:900;
+font-size:32px;
+font-weight:900
 }
 
 .section-title p{
-    color:#777;
-    margin-top:8px;
+color:#777;
+margin-top:8px
 }
 
 .category{
-    margin-top:35px;
+margin-top:35px
 }
 
 .category-title{
-    font-size:23px;
-    font-weight:800;
-    margin-bottom:18px;
-    padding-left:12px;
-    border-left:3px solid #fff;
+font-size:23px;
+font-weight:800;
+margin-bottom:18px;
+padding-left:12px;
+border-left:3px solid #fff
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px
 }
 
 .card{
-    background:#0d0d0d;
-    border:1px solid #222;
-    border-radius:12px;
-    padding:22px;
-    transition:.25s;
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:12px;
+padding:22px;
+transition:.25s
 }
 
 .card:hover{
-    transform:translateY(-4px);
-    border-color:#555;
+transform:translateY(-4px);
+border-color:#555
 }
 
 .card h3{
-    font-size:18px;
-    margin-bottom:10px;
+font-size:18px;
+margin-bottom:10px
 }
 
 .card .price{
-    font-size:25px;
-    font-weight:900;
-    margin-top:15px;
+font-size:25px;
+font-weight:900;
+margin-top:15px
 }
 
 .card p{
-    color:#888;
-    font-size:13px;
-    line-height:1.6;
+color:#888;
+font-size:13px;
+line-height:1.6
 }
 
 .service-card{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px
 }
 
 .service-price{
-    font-size:22px;
-    font-weight:900;
-    white-space:nowrap;
+font-size:22px;
+font-weight:900;
+white-space:nowrap
 }
 
 .contact-box{
-    background:#0d0d0d;
-    border:1px solid #222;
-    border-radius:14px;
-    padding:35px 20px;
-    text-align:center;
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:14px;
+padding:35px 20px;
+text-align:center
 }
 
 .phone{
-    font-size:30px;
-    font-weight:900;
-    margin:15px 0 25px;
-    letter-spacing:1px;
+font-size:30px;
+font-weight:900;
+margin:15px 0 25px
 }
 
 .qr-box{
-    margin:25px auto 0;
-    width:220px;
-    height:220px;
-    background:#fff;
-    border-radius:12px;
-    padding:10px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+margin:25px auto 0;
+width:min(330px,90vw);
+background:#fff;
+border-radius:12px;
+padding:12px
 }
 
 .qr-box img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain;
-}
-
-.qr-placeholder{
-    color:#000;
-    text-align:center;
-    font-size:14px;
-    font-weight:bold;
+display:block;
+width:100%;
+height:auto;
+border-radius:6px
 }
 
 .review-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px
 }
 
 .review{
-    background:#0d0d0d;
-    border:1px solid #222;
-    border-radius:12px;
-    padding:22px;
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:12px;
+padding:22px
 }
 
 .stars{
-    letter-spacing:3px;
-    margin-bottom:12px;
+letter-spacing:3px;
+margin-bottom:12px
 }
 
 .review p{
-    color:#aaa;
-    line-height:1.6;
+color:#aaa;
+line-height:1.6
 }
 
 .review-name{
-    margin-top:15px;
-    font-weight:bold;
+margin-top:15px;
+font-weight:bold
 }
 
 .cta{
-    text-align:center;
-    padding:70px 20px;
+text-align:center;
+padding:70px 20px
 }
 
 .cta h2{
-    font-size:35px;
-    margin-bottom:12px;
+font-size:35px;
+margin-bottom:12px
 }
 
 .cta p{
-    color:#888;
-    margin-bottom:25px;
+color:#888;
+margin-bottom:25px
 }
 
 footer{
-    border-top:1px solid #222;
-    text-align:center;
-    padding:30px 20px;
-    color:#666;
-    font-size:13px;
+border-top:1px solid #222;
+text-align:center;
+padding:30px 20px;
+color:#666;
+font-size:13px
 }
 
 @media(max-width:700px){
 
-    .nav{
-        padding:15px;
-    }
+.nav{
+padding:15px
+}
 
-    .logo{
-        font-size:21px;
-        letter-spacing:3px;
-    }
+.logo{
+font-size:21px;
+letter-spacing:3px
+}
 
-    .nav-links{
-        gap:10px;
-        font-size:11px;
-    }
+.nav-links{
+gap:10px;
+font-size:11px
+}
 
-    .hero{
-        padding:65px 20px 50px;
-    }
+.hero{
+padding:65px 20px 50px
+}
 
-    .hero h1{
-        font-size:42px;
-        letter-spacing:5px;
-    }
+.hero h1{
+font-size:42px;
+letter-spacing:5px
+}
 
-    .hero p{
-        font-size:14px;
-    }
+.hero p{
+font-size:14px
+}
 
-    .section{
-        padding:35px 0;
-    }
+.section{
+padding:35px 0
+}
 
-    .section-title h2{
-        font-size:27px;
-    }
+.section-title h2{
+font-size:27px
+}
 
-    .cards{
-        grid-template-columns:1fr 1fr;
-    }
+.cards{
+grid-template-columns:1fr 1fr
+}
 
-    .card{
-        padding:17px;
-    }
+.card{
+padding:17px
+}
 
-    .card h3{
-        font-size:15px;
-    }
+.card h3{
+font-size:15px
+}
 
-    .card .price{
-        font-size:20px;
-    }
+.card .price{
+font-size:20px
+}
 
-    .service-card{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+.service-card{
+flex-direction:column;
+align-items:flex-start
+}
 
-    .service-price{
-        font-size:21px;
-    }
+.phone{
+font-size:24px
+}
 
-    .phone{
-        font-size:24px;
-    }
 }
 
 @media(max-width:430px){
 
-    .cards{
-        grid-template-columns:1fr;
-    }
+.cards{
+grid-template-columns:1fr
+}
 
-    .nav-links a:nth-child(2){
-        display:none;
-    }
+.hero h1{
+font-size:37px
+}
 
-    .hero h1{
-        font-size:37px;
-    }
 }
 </style>
 </head>
@@ -378,397 +362,534 @@ footer{
 <body>
 
 <header>
-    <div class="nav">
 
-        <div class="logo">
-            ZEVORA
-        </div>
+<div class="nav">
 
-        <div class="nav-links">
-            <a href="#shop">Shop</a>
-            <a href="#services">服务</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact">联系</a>
-        </div>
+<div class="logo">
+ZEVORA
+</div>
 
-    </div>
+<div class="nav-links">
+
+<a href="#shop">Shop</a>
+
+<a href="#services">服务</a>
+
+<a href="#reviews">Reviews</a>
+
+<a href="#contact">联系</a>
+
+</div>
+
+</div>
+
 </header>
 
 
 <section class="hero">
 
-    <h1>ZEVORA</h1>
+<h1>ZEVORA</h1>
 
-    <p>
-        GAMING • TOP UP • SERVICES
-    </p>
+<p>
+GAMING • TOP UP • SERVICES
+</p>
 
-    <div class="hero-buttons">
+<div class="hero-buttons">
 
-        <a class="btn btn-main" href="#shop">
-            查看服务
-        </a>
+<a class="btn btn-main" href="#shop">
+查看服务
+</a>
 
-        <a class="btn btn-dark"
-           href="https://wa.me/60175314055"
-           target="_blank">
-            联系客服
-        </a>
+<a class="btn btn-dark"
+href="https://wa.me/60175314055"
+target="_blank">
+联系客服
+</a>
 
-    </div>
+</div>
 
 </section>
 
 
 <div class="container" id="shop">
 
+
 <section class="section">
 
-    <div class="section-title">
-        <h2>🎮 GAMING TOP UP</h2>
-        <p>快速 · 方便 · 可靠</p>
-    </div>
+<div class="section-title">
+
+<h2>🎮 GAMING TOP UP</h2>
+
+<p>
+快速 · 方便 · 可靠
+</p>
+
+</div>
 
 
-    <!-- PUBG -->
+<div class="category">
 
-    <div class="category">
+<div class="category-title">
+PUBG MOBILE
+</div>
 
-        <div class="category-title">
-            PUBG MOBILE
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>325 UC</h3>
-                <p>PUBG Mobile UC Top Up</p>
-                <div class="price">RM22</div>
-            </div>
-
-            <div class="card">
-                <h3>660 UC</h3>
-                <p>PUBG Mobile UC Top Up</p>
-                <div class="price">RM39.50</div>
-            </div>
-
-            <div class="card">
-                <h3>1800 UC</h3>
-                <p>PUBG Mobile UC Top Up</p>
-                <div class="price">RM96</div>
-            </div>
-
-            <div class="card">
-                <h3>3850 UC</h3>
-                <p>PUBG Mobile UC Top Up</p>
-                <div class="price">RM195</div>
-            </div>
-
-            <div class="card">
-                <h3>8100 UC</h3>
-                <p>PUBG Mobile UC Top Up</p>
-                <div class="price">RM390</div>
-            </div>
-
-            <div class="card">
-                <h3>16200 UC</h3>
-                <p>PUBG Mobile UC Top Up</p>
-                <div class="price">RM792.61</div>
-            </div>
-
-        </div>
-
-    </div>
+<div class="cards">
 
 
-    <!-- ROBLOX -->
+<div class="card">
 
-    <div class="category">
+<h3>325 UC</h3>
 
-        <div class="category-title">
-            ROBLOX
-        </div>
+<p>
+PUBG Mobile UC Top Up
+</p>
 
-        <div class="cards">
+<div class="price">
+RM22
+</div>
 
-            <div class="card">
-                <h3>240 Robux</h3>
-                <p>Roblox Top Up</p>
-                <div class="price">RM12.10</div>
-            </div>
+</div>
 
-            <div class="card">
-                <h3>320 Robux</h3>
-                <p>Roblox Top Up</p>
-                <div class="price">RM16</div>
-            </div>
 
-            <div class="card">
-                <h3>500 Robux</h3>
-                <p>Roblox Top Up</p>
-                <div class="price">RM25</div>
-            </div>
+<div class="card">
 
-            <div class="card">
-                <h3>800 Robux</h3>
-                <p>Roblox Top Up</p>
-                <div class="price">RM38</div>
-            </div>
+<h3>660 UC</h3>
 
-            <div class="card">
-                <h3>1000 Robux</h3>
-                <p>Roblox Top Up</p>
-                <div class="price">RM47</div>
-            </div>
+<p>
+PUBG Mobile UC Top Up
+</p>
 
-            <div class="card">
-                <h3>2000 Robux</h3>
-                <p>Roblox Top Up</p>
-                <div class="price">RM93</div>
-            </div>
+<div class="price">
+RM39.50
+</div>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="card">
+
+<h3>1800 UC</h3>
+
+<p>
+PUBG Mobile UC Top Up
+</p>
+
+<div class="price">
+RM96
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>3850 UC</h3>
+
+<p>
+PUBG Mobile UC Top Up
+</p>
+
+<div class="price">
+RM195
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>8100 UC</h3>
+
+<p>
+PUBG Mobile UC Top Up
+</p>
+
+<div class="price">
+RM390
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>16200 UC</h3>
+
+<p>
+PUBG Mobile UC Top Up
+</p>
+
+<div class="price">
+RM792.61
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="category">
+
+<div class="category-title">
+ROBLOX
+</div>
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>240 Robux</h3>
+
+<p>
+Roblox Top Up
+</p>
+
+<div class="price">
+RM12.10
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>320 Robux</h3>
+
+<p>
+Roblox Top Up
+</p>
+
+<div class="price">
+RM16
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>500 Robux</h3>
+
+<p>
+Roblox Top Up
+</p>
+
+<div class="price">
+RM25
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>800 Robux</h3>
+
+<p>
+Roblox Top Up
+</p>
+
+<div class="price">
+RM38
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>1000 Robux</h3>
+
+<p>
+Roblox Top Up
+</p>
+
+<div class="price">
+RM47
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>2000 Robux</h3>
+
+<p>
+Roblox Top Up
+</p>
+
+<div class="price">
+RM93
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
-
-<!-- SERVICES -->
 
 <section class="section" id="services">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>🛠️ 服务类</h2>
+<h2>🛠️ 服务类</h2>
 
-        <p>
-            需要其它服务可以联系客服
-        </p>
+<p>
+需要其它服务可以联系客服
+</p>
 
-    </div>
-
-
-    <div class="cards">
-
-        <div class="card service-card">
-
-            <div>
-                <h3>网站制作</h3>
-                <p>
-                    简单个人 / 商业网站制作
-                </p>
-            </div>
-
-            <div class="service-price">
-                RM25
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="card service-card">
-
-            <div>
-                <h3>打广告</h3>
-                <p>
-                    广告发布服务
-                </p>
-            </div>
-
-            <div class="service-price">
-                RM20
-            </div>
-
-        </div>
+<div class="cards">
 
 
-        <div class="card service-card">
+<div class="card service-card">
 
-            <div>
-                <h3>其它</h3>
-                <p>
-                    其它服务请联系客服咨询
-                </p>
-            </div>
+<div>
 
-            <a class="btn btn-main"
-               href="https://wa.me/60175314055"
-               target="_blank">
-                联系客服
-            </a>
+<h3>
+网站制作
+</h3>
 
-        </div>
+<p>
+简单个人 / 商业网站制作
+</p>
 
-    </div>
+</div>
+
+<div class="service-price">
+RM25
+</div>
+
+</div>
+
+
+<div class="card service-card">
+
+<div>
+
+<h3>
+打广告
+</h3>
+
+<p>
+广告发布服务
+</p>
+
+</div>
+
+<div class="service-price">
+RM20
+</div>
+
+</div>
+
+
+<div class="card service-card">
+
+<div>
+
+<h3>
+其它
+</h3>
+
+<p>
+其它服务请联系客服咨询
+</p>
+
+</div>
+
+<a class="btn btn-main"
+href="https://wa.me/60175314055"
+target="_blank">
+
+联系客服
+
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
-
-<!-- PAYMENT -->
 
 <section class="section" id="contact">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>💳 PAYMENT</h2>
+<h2>
+💳 PAYMENT
+</h2>
 
-        <p>
-            付款前请先联系客服确认订单
-        </p>
+<p>
+付款前请先联系客服确认订单
+</p>
 
-    </div>
-
-
-    <div class="contact-box">
-
-        <h3>联系客服</h3>
-
-        <div class="phone">
-            017 531 4055
-        </div>
+</div>
 
 
-        <a class="btn btn-main"
-           href="https://wa.me/60175314055"
-           target="_blank">
-            WhatsApp 客服
-        </a>
+<div class="contact-box">
+
+<h3>
+Touch 'n Go eWallet
+</h3>
 
 
-        <div class="qr-box">
+<div class="phone">
+017 531 4055
+</div>
 
-            <!--
-            把你的 QR 图片命名为 qr.png
-            然后和 index.html 放在同一个文件夹
-            -->
 
-            <img src="qr.png"
-                 alt="ZEVORA Payment QR"
-                 onerror="this.style.display='none';document.getElementById('qrText').style.display='block';">
+<a class="btn btn-main"
+href="https://wa.me/60175314055"
+target="_blank">
 
-            <div id="qrText"
-                 class="qr-placeholder"
-                 style="display:none;">
-                PAYMENT QR<br><br>
-                请将你的 QR 图片命名为<br>
-                <b>qr.png</b>
-            </div>
+WhatsApp 客服
 
-        </div>
+</a>
 
-        <p style="margin-top:15px;color:#777;">
-            ZEVORA PAYMENT QR
-        </p>
 
-    </div>
+<div class="qr-box">
+
+<img
+src="data:image/webp;base64,REPLACE_WITH_QR_DATA"
+alt="ZEVORA Payment QR">
+
+</div>
+
+
+<p style="margin-top:15px;color:#777">
+
+ZEVORA PAYMENT QR
+
+</p>
+
+</div>
 
 </section>
 
-
-<!-- CUSTOMER REVIEWS -->
 
 <section class="section" id="reviews">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>⭐ CUSTOMER REVIEWS</h2>
+<h2>
+⭐ CUSTOMER REVIEWS
+</h2>
 
-        <p>
-            顾客评价
-        </p>
+<p>
+顾客评价
+</p>
 
-    </div>
-
-
-    <div class="review-grid">
-
-
-        <div class="review">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                服务很快，充值完成后马上收到。
-            </p>
-
-            <div class="review-name">
-                Customer
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="review">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                回复速度很快，价格也很清楚。
-            </p>
-
-            <div class="review-name">
-                Customer
-            </div>
-
-        </div>
+<div class="review-grid">
 
 
-        <div class="review">
+<div class="review">
 
-            <div class="stars">
-                ★★★★★
-            </div>
+<div class="stars">
+★★★★★
+</div>
 
-            <p>
-                交易过程简单，服务不错。
-            </p>
+<p>
+服务很快，充值完成后马上收到。
+</p>
 
-            <div class="review-name">
-                Customer
-            </div>
+<div class="review-name">
+Customer
+</div>
 
-        </div>
+</div>
 
 
-    </div>
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+回复速度很快，价格也很清楚。
+</p>
+
+<div class="review-name">
+Customer
+</div>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+交易过程简单，服务不错。
+</p>
+
+<div class="review-name">
+Customer
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
-
-<!-- CTA -->
 
 <section class="cta">
 
-    <h2>需要服务？</h2>
+<h2>
+需要服务？
+</h2>
 
-    <p>
-        欢迎联系 ZEVORA
-    </p>
+<p>
+欢迎联系 ZEVORA
+</p>
 
-    <a class="btn btn-main"
-       href="https://wa.me/60175314055"
-       target="_blank">
-        立即联系客服
-    </a>
+<a class="btn btn-main"
+href="https://wa.me/60175314055"
+target="_blank">
+
+立即联系客服
+
+</a>
 
 </section>
+
 
 </div>
 
 
 <footer>
 
-    © 2026 ZEVORA
-    <br><br>
-    Gaming Top Up • Services
+© 2026 ZEVORA
+
+<br><br>
+
+Gaming Top Up • Services
 
 </footer>
 
 
 </body>
 </html>
+    
