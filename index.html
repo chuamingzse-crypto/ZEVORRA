@@ -4,892 +4,187 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ZEVORA | Gaming Services</title>
-
 <style>
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-font-family:Arial,Helvetica,sans-serif
-}
-
-html{
-scroll-behavior:smooth
-}
-
-body{
-background:#050505;
-color:#fff;
-min-height:100vh
-}
-
-a{
-text-decoration:none;
-color:inherit
-}
-
-header{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(5,5,5,.96);
-border-bottom:1px solid #222
-}
-
-.nav{
-max-width:1100px;
-margin:auto;
-padding:18px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-
-.logo{
-font-size:26px;
-font-weight:900;
-letter-spacing:4px
-}
-
-.nav-links{
-display:flex;
-gap:20px;
-font-size:14px
-}
-
-.nav-links a{
-color:#aaa
-}
-
-.nav-links a:hover{
-color:#fff
-}
-
-.hero{
-max-width:1100px;
-margin:auto;
-padding:90px 20px 70px;
-text-align:center
-}
-
-.hero h1{
-font-size:60px;
-font-weight:900;
-letter-spacing:7px
-}
-
-.hero p{
-color:#999;
-margin-top:15px;
-font-size:16px
-}
-
-.hero-buttons{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap
-}
-
-.btn{
-display:inline-block;
-padding:13px 25px;
-border-radius:8px;
-font-weight:bold;
-border:1px solid #444;
-transition:.2s
-}
-
-.btn:hover{
-transform:translateY(-2px)
-}
-
-.btn-main{
-background:#fff;
-color:#000
-}
-
-.btn-dark{
-background:#111;
-color:#fff
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px
-}
-
-.section{
-padding:50px 0
-}
-
-.section-title{
-text-align:center;
-margin-bottom:30px
-}
-
-.section-title h2{
-font-size:32px;
-font-weight:900
-}
-
-.section-title p{
-color:#777;
-margin-top:8px
-}
-
-.category{
-margin-top:35px
-}
-
-.category-title{
-font-size:23px;
-font-weight:800;
-margin-bottom:18px;
-padding-left:12px;
-border-left:3px solid #fff
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px
-}
-
-.card{
-background:#0d0d0d;
-border:1px solid #222;
-border-radius:12px;
-padding:22px;
-transition:.25s
-}
-
-.card:hover{
-transform:translateY(-4px);
-border-color:#555
-}
-
-.card h3{
-font-size:18px;
-margin-bottom:10px
-}
-
-.card .price{
-font-size:25px;
-font-weight:900;
-margin-top:15px
-}
-
-.card p{
-color:#888;
-font-size:13px;
-line-height:1.6
-}
-
-.service-card{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px
-}
-
-.service-price{
-font-size:22px;
-font-weight:900;
-white-space:nowrap
-}
-
-.contact-box{
-background:#0d0d0d;
-border:1px solid #222;
-border-radius:14px;
-padding:35px 20px;
-text-align:center
-}
-
-.phone{
-font-size:30px;
-font-weight:900;
-margin:15px 0 25px
-}
-
-.qr-box{
-margin:25px auto 0;
-width:min(330px,90vw);
-background:#fff;
-border-radius:12px;
-padding:12px
-}
-
-.qr-box img{
-display:block;
-width:100%;
-height:auto;
-border-radius:6px
-}
-
-.review-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px
-}
-
-.review{
-background:#0d0d0d;
-border:1px solid #222;
-border-radius:12px;
-padding:22px
-}
-
-.stars{
-letter-spacing:3px;
-margin-bottom:12px
-}
-
-.review p{
-color:#aaa;
-line-height:1.6
-}
-
-.review-name{
-margin-top:15px;
-font-weight:bold
-}
-
-.cta{
-text-align:center;
-padding:70px 20px
-}
-
-.cta h2{
-font-size:35px;
-margin-bottom:12px
-}
-
-.cta p{
-color:#888;
-margin-bottom:25px
-}
-
-footer{
-border-top:1px solid #222;
-text-align:center;
-padding:30px 20px;
-color:#666;
-font-size:13px
-}
-
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#050505;color:#fff;min-height:100vh}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.96);border-bottom:1px solid #222}
+.nav{max-width:1100px;margin:auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:26px;font-weight:900;letter-spacing:4px}
+.nav-links{display:flex;gap:20px;font-size:14px}
+.nav-links a{color:#aaa}
+.hero{max-width:1100px;margin:auto;padding:80px 20px 60px;text-align:center}
+.hero h1{font-size:60px;font-weight:900;letter-spacing:7px}
+.hero p{color:#999;margin-top:15px}
+.hero-buttons{margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 25px;border-radius:8px;font-weight:bold;border:1px solid #444}
+.btn-main{background:#fff;color:#000}
+.btn-dark{background:#111;color:#fff}
+.container{max-width:1100px;margin:auto;padding:20px}
+.section{padding:45px 0}
+.section-title{text-align:center;margin-bottom:30px}
+.section-title h2{font-size:32px}
+.section-title p{color:#777;margin-top:8px}
+.category{margin-top:35px}
+.category-title{font-size:23px;font-weight:800;margin-bottom:18px;padding-left:12px;border-left:3px solid #fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:#0d0d0d;border:1px solid #222;border-radius:12px;padding:22px}
+.card h3{font-size:18px;margin-bottom:10px}
+.card .price{font-size:25px;font-weight:900;margin-top:15px}
+.card p{color:#888;font-size:13px;line-height:1.6}
+.service-card{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.service-price{font-size:22px;font-weight:900;white-space:nowrap}
+.contact-box{background:#0d0d0d;border:1px solid #222;border-radius:14px;padding:35px 20px;text-align:center}
+.phone{font-size:30px;font-weight:900;margin:15px 0 25px}
+.qr-box{margin:25px auto 0;max-width:500px;background:#fff;border-radius:12px;padding:12px}
+.qr-box img{display:block;width:100%;height:auto;border-radius:7px}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.review{background:#0d0d0d;border:1px solid #222;border-radius:12px;padding:22px}
+.stars{letter-spacing:3px;margin-bottom:12px}
+.review p{color:#aaa;line-height:1.6}
+.review-name{margin-top:15px;font-weight:bold}
+.cta{text-align:center;padding:70px 20px}
+.cta h2{font-size:35px;margin-bottom:12px}
+.cta p{color:#888;margin-bottom:25px}
+footer{border-top:1px solid #222;text-align:center;padding:30px 20px;color:#666;font-size:13px}
 @media(max-width:700px){
-
-.nav{
-padding:15px
+.nav{padding:15px}.logo{font-size:21px}.nav-links{gap:10px;font-size:11px}
+.hero{padding:60px 20px 45px}.hero h1{font-size:42px;letter-spacing:5px}
+.section{padding:35px 0}.section-title h2{font-size:27px}
+.cards{grid-template-columns:1fr 1fr}.card{padding:17px}
+.card h3{font-size:15px}.card .price{font-size:20px}
+.service-card{flex-direction:column;align-items:flex-start}.phone{font-size:24px}
 }
-
-.logo{
-font-size:21px;
-letter-spacing:3px
-}
-
-.nav-links{
-gap:10px;
-font-size:11px
-}
-
-.hero{
-padding:65px 20px 50px
-}
-
-.hero h1{
-font-size:42px;
-letter-spacing:5px
-}
-
-.hero p{
-font-size:14px
-}
-
-.section{
-padding:35px 0
-}
-
-.section-title h2{
-font-size:27px
-}
-
-.cards{
-grid-template-columns:1fr 1fr
-}
-
-.card{
-padding:17px
-}
-
-.card h3{
-font-size:15px
-}
-
-.card .price{
-font-size:20px
-}
-
-.service-card{
-flex-direction:column;
-align-items:flex-start
-}
-
-.phone{
-font-size:24px
-}
-
-}
-
-@media(max-width:430px){
-
-.cards{
-grid-template-columns:1fr
-}
-
-.hero h1{
-font-size:37px
-}
-
-}
+@media(max-width:430px){.cards{grid-template-columns:1fr}.hero h1{font-size:37px}}
 </style>
 </head>
-
 <body>
 
-<header>
-
-<div class="nav">
-
-<div class="logo">
-ZEVORA
-</div>
-
+<header><div class="nav">
+<div class="logo">ZEVORA</div>
 <div class="nav-links">
-
-<a href="#shop">Shop</a>
-
-<a href="#services">服务</a>
-
-<a href="#reviews">Reviews</a>
-
-<a href="#contact">联系</a>
-
-</div>
-
-</div>
-
-</header>
-
+<a href="#shop">Shop</a><a href="#services">服务</a><a href="#reviews">Reviews</a><a href="#contact">联系</a>
+</div></div></header>
 
 <section class="hero">
-
 <h1>ZEVORA</h1>
-
-<p>
-GAMING • TOP UP • SERVICES
-</p>
-
+<p>GAMING • TOP UP • SERVICES</p>
 <div class="hero-buttons">
-
-<a class="btn btn-main" href="#shop">
-查看服务
-</a>
-
-<a class="btn btn-dark"
-href="https://wa.me/60175314055"
-target="_blank">
-联系客服
-</a>
-
-</div>
-
-</section>
-
+<a class="btn btn-main" href="#shop">查看服务</a>
+<a class="btn btn-dark" href="https://wa.me/60175314055" target="_blank">联系客服</a>
+</div></section>
 
 <div class="container" id="shop">
 
-
 <section class="section">
-
-<div class="section-title">
-
-<h2>🎮 GAMING TOP UP</h2>
-
-<p>
-快速 · 方便 · 可靠
-</p>
-
-</div>
-
-
-<div class="category">
-
-<div class="category-title">
-PUBG MOBILE
-</div>
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>325 UC</h3>
-
-<p>
-PUBG Mobile UC Top Up
-</p>
-
-<div class="price">
-RM22
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>660 UC</h3>
-
-<p>
-PUBG Mobile UC Top Up
-</p>
-
-<div class="price">
-RM39.50
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>1800 UC</h3>
-
-<p>
-PUBG Mobile UC Top Up
-</p>
-
-<div class="price">
-RM96
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>3850 UC</h3>
-
-<p>
-PUBG Mobile UC Top Up
-</p>
-
-<div class="price">
-RM195
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>8100 UC</h3>
-
-<p>
-PUBG Mobile UC Top Up
-</p>
-
-<div class="price">
-RM390
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>16200 UC</h3>
-
-<p>
-PUBG Mobile UC Top Up
-</p>
-
-<div class="price">
-RM792.61
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<div class="category">
-
-<div class="category-title">
-ROBLOX
-</div>
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>240 Robux</h3>
-
-<p>
-Roblox Top Up
-</p>
-
-<div class="price">
-RM12.10
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>320 Robux</h3>
-
-<p>
-Roblox Top Up
-</p>
-
-<div class="price">
-RM16
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>500 Robux</h3>
-
-<p>
-Roblox Top Up
-</p>
-
-<div class="price">
-RM25
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>800 Robux</h3>
-
-<p>
-Roblox Top Up
-</p>
-
-<div class="price">
-RM38
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>1000 Robux</h3>
-
-<p>
-Roblox Top Up
-</p>
-
-<div class="price">
-RM47
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>2000 Robux</h3>
-
-<p>
-Roblox Top Up
-</p>
-
-<div class="price">
-RM93
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+<div class="section-title"><h2>🎮 GAMING TOP UP</h2><p>快速 · 方便 · 可靠</p></div>
+
+<div class="category"><div class="category-title">PUBG MOBILE</div><div class="cards">
+<div class="card"><h3>325 UC</h3><p>PUBG Mobile UC Top Up</p><div class="price">RM22</div></div>
+<div class="card"><h3>660 UC</h3><p>PUBG Mobile UC Top Up</p><div class="price">RM39.50</div></div>
+<div class="card"><h3>1800 UC</h3><p>PUBG Mobile UC Top Up</p><div class="price">RM96</div></div>
+<div class="card"><h3>3850 UC</h3><p>PUBG Mobile UC Top Up</p><div class="price">RM195</div></div>
+<div class="card"><h3>8100 UC</h3><p>PUBG Mobile UC Top Up</p><div class="price">RM390</div></div>
+<div class="card"><h3>16200 UC</h3><p>PUBG Mobile UC Top Up</p><div class="price">RM792.61</div></div>
+</div></div><div class="category"><div class="category-title">ROBLOX</div><div class="cards">
+<div class="card"><h3>240 Robux</h3><p>Roblox Top Up</p><div class="price">RM12.10</div></div>
+<div class="card"><h3>320 Robux</h3><p>Roblox Top Up</p><div class="price">RM16</div></div>
+<div class="card"><h3>500 Robux</h3><p>Roblox Top Up</p><div class="price">RM25</div></div>
+<div class="card"><h3>800 Robux</h3><p>Roblox Top Up</p><div class="price">RM38</div></div>
+<div class="card"><h3>1000 Robux</h3><p>Roblox Top Up</p><div class="price">RM47</div></div>
+<div class="card"><h3>2000 Robux</h3><p>Roblox Top Up</p><div class="price">RM93</div></div>
+</div></div>
 
 </section>
-
 
 <section class="section" id="services">
-
 <div class="section-title">
-
 <h2>🛠️ 服务类</h2>
-
-<p>
-需要其它服务可以联系客服
-</p>
-
+<p>其他游戏及网络服务</p>
 </div>
-
 
 <div class="cards">
-
+<div class="card service-card">
+<div><h3>网站制作</h3><p>简单个人/游戏服务网站</p></div>
+<div class="service-price">RM25</div>
+</div>
 
 <div class="card service-card">
-
-<div>
-
-<h3>
-网站制作
-</h3>
-
-<p>
-简单个人 / 商业网站制作
-</p>
-
+<div><h3>打广告</h3><p>帮助发布推广内容</p></div>
+<div class="service-price">RM20</div>
 </div>
-
-<div class="service-price">
-RM25
-</div>
-
-</div>
-
 
 <div class="card service-card">
-
-<div>
-
-<h3>
-打广告
-</h3>
-
-<p>
-广告发布服务
-</p>
-
+<div><h3>其它服务</h3><p>有需要请联系客服咨询</p></div>
+<div class="service-price">联系客服</div>
 </div>
-
-<div class="service-price">
-RM20
 </div>
-
-</div>
-
-
-<div class="card service-card">
-
-<div>
-
-<h3>
-其它
-</h3>
-
-<p>
-其它服务请联系客服咨询
-</p>
-
-</div>
-
-<a class="btn btn-main"
-href="https://wa.me/60175314055"
-target="_blank">
-
-联系客服
-
-</a>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<section class="section" id="contact">
-
+</section><section class="section" id="contact">
 <div class="section-title">
-
-<h2>
-💳 PAYMENT
-</h2>
-
-<p>
-付款前请先联系客服确认订单
-</p>
-
+<h2>💳 PAYMENT</h2>
+<p>付款前请先联系客服确认订单</p>
 </div>
-
 
 <div class="contact-box">
-
-<h3>
-Touch 'n Go eWallet
-</h3>
-
-
-<div class="phone">
-017 531 4055
-</div>
-
-
-<a class="btn btn-main"
-href="https://wa.me/60175314055"
-target="_blank">
-
-WhatsApp 客服
-
-</a>
-
+<h3>Touch 'n Go eWallet</h3>
+<div class="phone">017 531 4055</div>
+<a class="btn btn-main" href="https://wa.me/60175314055" target="_blank">WhatsApp 客服</a>
 
 <div class="qr-box">
-
-<img
-src="data:image/webp;base64,REPLACE_WITH_QR_DATA"
-alt="ZEVORA Payment QR">
-
+<img id="paymentQR" alt="ZEVORA Touch n Go Payment QR">
 </div>
 
-
-<p style="margin-top:15px;color:#777">
-
-ZEVORA PAYMENT QR
-
-</p>
-
+<p style="margin-top:15px;color:#777">ZEVORA PAYMENT QR</p>
 </div>
-
 </section>
-
 
 <section class="section" id="reviews">
-
 <div class="section-title">
-
-<h2>
-⭐ CUSTOMER REVIEWS
-</h2>
-
-<p>
-顾客评价
-</p>
-
+<h2>⭐ CUSTOMER REVIEWS</h2>
+<p>顾客评价</p>
 </div>
-
 
 <div class="review-grid">
-
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>服务很快，充值完成后马上收到。</p>
+<div class="review-name">Customer</div>
+</div>
 
 <div class="review">
-
-<div class="stars">
-★★★★★
+<div class="stars">★★★★★</div>
+<p>回复速度很快，价格也很清楚。</p>
+<div class="review-name">Customer</div>
 </div>
-
-<p>
-服务很快，充值完成后马上收到。
-</p>
-
-<div class="review-name">
-Customer
-</div>
-
-</div>
-
 
 <div class="review">
-
-<div class="stars">
-★★★★★
+<div class="stars">★★★★★</div>
+<p>交易过程简单，服务不错。</p>
+<div class="review-name">Customer</div>
 </div>
-
-<p>
-回复速度很快，价格也很清楚。
-</p>
-
-<div class="review-name">
-Customer
 </div>
-
-</div>
-
-
-<div class="review">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-交易过程简单，服务不错。
-</p>
-
-<div class="review-name">
-Customer
-</div>
-
-</div>
-
-
-</div>
-
 </section>
-
 
 <section class="cta">
-
-<h2>
-需要服务？
-</h2>
-
-<p>
-欢迎联系 ZEVORA
-</p>
-
-<a class="btn btn-main"
-href="https://wa.me/60175314055"
-target="_blank">
-
+<h2>需要服务？</h2>
+<p>欢迎联系 ZEVORA</p>
+<a class="btn btn-main" href="https://wa.me/60175314055" target="_blank">
 立即联系客服
-
 </a>
-
 </section>
-
 
 </div>
 
-
 <footer>
-
-© 2026 ZEVORA
-
-<br><br>
-
+© 2026 ZEVORA<br><br>
 Gaming Top Up • Services
-
 </footer>
 
+<script><script>
+const qrSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" shape-rendering="crispEdges"><path d="M4,4h7v1H4zM12,4h6v1H12zM20,4h4v1H20zM25,4h1v1H25zM28,4h3v1H28zM32,4h1v1H32zM34,4h7v1H34zM4,5h1v1H4zM10,5h1v1H10zM12,5h2v1H12zM16,5h3v1H16zM20,5h2v1H20zM24,5h1v1H24zM26,5h1v1H26zM28,5h1v1H28zM30,5h1v1H30zM32,5h1v1H32zM34,5h1v1H34zM40,5h1v1H40zM4,6h1v1H4zM6,6h3v1H6zM10,6h1v1H10zM12,6h2v1H12zM15,6h1v1H15zM18,6h1v1H18zM20,6h2v1H20zM24,6h3v1H24zM28,6h3v1H28zM32,6h1v1H32zM34,6h1v1H34zM36,6h3v1H36zM40,6h1v1H40zM4,7h1v1H4zM6,7h3v1H6zM10,7h1v1H10zM13,7h1v1H13zM16,7h1v1H16zM18,7h1v1H18zM21,7h3v1H21zM26,7h1v1H26zM29,7h3v1H29zM34,7h1v1H34zM36,7h3v1H36zM40,7h1v1H40zM4,8h1v1H4zM6,8h3v1H6zM10,8h1v1H10zM12,8h3v1H12zM16,8h1v1H16zM18,8h1v1H18zM21,8h1v1H21zM24,8h2v1H24zM27,8h3v1H27zM31,8h1v1H31zM34,8h1v1H34zM36,8h3v1H36zM40,8h1v1H40zM4,9h1v1H4zM10,9h1v1H10zM13,9h2v1H13zM16,9h2v1H16zM19,9h1v1H19zM21,9h3v1H21zM27,9h2v1H27zM30,9h1v1H30zM32,9h1v1H32zM34,9h1v1H34zM40,9h1v1H40zM4,10h7v1H4zM12,10h1v1H12zM14,10h1v1H14zM16,10h1v1H16zM18,10h1v1H18zM20,10h1v1H20zM22,10h1v1H22zM24,10h1v1H24zM26,10h1v1H26zM28,10h1v1H28zM30,10h1v1H30zM32,10h1v1H32zM34,10h7v1H34zM18,11h1v1H18zM24,11h1v1H24zM27,11h4v1H27zM4,12h1v1H4zM7,12h6v1H7zM14,12h3v1H14zM20,12h1v1H20zM22,12h1v1H22zM24,12h1v1H24zM27,12h2v1H27zM31,12h3v1H31zM36,12h1v1H36zM38,12h3v1H38zM4,13h2v1H4zM14,13h2v1H14zM21,13h1v1H21zM24,13h3v1H24zM29,13h1v1H29zM31,13h1v1H31zM34,13h1v1H34zM36,13h1v1H36zM5,14h2v1H5zM10,14h1v1H10zM12,14h1v1H12zM14,14h1v1H14zM17,14h2v1H17zM21,14h2v1H21zM26,14h3v1H26zM30,14h5v1H30zM37,14h4v1H37zM4,15h2v1H4zM7,15h3v1H7zM13,15h3v1H13zM17,15h1v1H17zM19,15h1v1H19zM21,15h1v1H21zM25,15h1v1H25zM27,15h2v1H27zM31,15h3v1H31zM35,15h2v1H35zM4,16h1v1H4zM7,16h1v1H7zM10,16h1v1H10zM12,16h1v1H12zM15,16h3v1H15zM20,16h2v1H20zM23,16h3v1H23zM28,16h7v1H28zM37,16h4v1H37zM5,17h1v1H5zM7,17h3v1H7zM11,17h2v1H11zM14,17h4v1H14zM19,17h1v1H19zM21,17h1v1H21zM23,17h2v1H23zM27,17h1v1H27zM29,17h2v1H29zM34,17h1v1H34zM36,17h1v1H36zM38,17h1v1H38zM6,18h1v1H6zM8,18h3v1H8zM14,18h2v1H14zM17,18h1v1H17zM20,18h2v1H20zM23,18h1v1H23zM25,18h1v1H25zM28,18h1v1H28zM31,18h2v1H31zM34,18h2v1H34zM37,18h4v1H37zM5,19h1v1H5zM8,19h1v1H8zM17,19h3v1H17zM21,19h2v1H21zM24,19h1v1H24zM26,19h1v1H26zM32,19h1v1H32zM34,19h1v1H34zM36,19h1v1H36zM38,19h2v1H38zM7,20h2v1H7zM10,20h1v1H10zM13,20h2v1H13zM16,20h1v1H16zM18,20h1v1H18zM20,20h2v1H20zM24,20h2v1H24zM27,20h9v1H27zM37,20h1v1H37zM39,20h1v1H39zM5,21h1v1H5zM7,21h1v1H7zM11,21h5v1H11zM17,21h1v1H17zM20,21h3v1H20zM24,21h1v1H24zM28,21h1v1H28zM31,21h1v1H31zM33,21h2v1H33zM38,21h3v1H38zM6,22h2v1H6zM10,22h2v1H10zM14,22h1v1H14zM17,22h3v1H17zM22,22h1v1H22zM24,22h1v1H24zM26,22h2v1H26zM29,22h2v1H29zM32,22h3v1H32zM36,22h1v1H36zM39,22h2v1H39zM4,23h1v1H4zM6,23h2v1H6zM12,23h1v1H12zM14,23h1v1H14zM18,23h1v1H18zM22,23h1v1H22zM26,23h6v1H26zM34,23h1v1H34zM37,23h2v1H37zM40,23h1v1H40zM5,24h1v1H5zM7,24h1v1H7zM10,24h1v1H10zM19,24h4v1H19zM26,24h3v1H26zM31,24h2v1H31zM35,24h1v1H35zM40,24h1v1H40zM4,25h1v1H4zM6,25h1v1H6zM8,25h1v1H8zM11,25h4v1H11zM17,25h2v1H17zM20,25h1v1H20zM22,25h1v1H22zM24,25h1v1H24zM27,25h2v1H27zM32,25h1v1H32zM35,25h2v1H35zM40,25h1v1H40zM5,26h2v1H5zM9,26h2v1H9zM16,26h2v1H16zM19,26h1v1H19zM21,26h4v1H21zM27,26h2v1H27zM30,26h2v1H30zM33,26h2v1H33zM37,26h3v1H37zM4,27h3v1H4zM8,27h1v1H8zM11,27h1v1H11zM14,27h1v1H14zM18,27h1v1H18zM20,27h2v1H20zM24,27h2v1H24zM27,27h1v1H27zM29,27h1v1H29zM33,27h3v1H33zM38,27h3v1H38zM4,28h1v1H4zM6,28h2v1H6zM9,28h8v1H9zM19,28h4v1H19zM25,28h3v1H25zM29,28h4v1H29zM35,28h2v1H35zM4,29h2v1H4zM8,29h2v1H8zM11,29h1v1H11zM14,29h1v1H14zM16,29h3v1H16zM20,29h1v1H20zM23,29h2v1H23zM27,29h4v1H27zM35,29h2v1H35zM40,29h1v1H40zM4,30h2v1H4zM8,30h4v1H8zM15,30h2v1H15zM18,30h1v1H18zM20,30h1v1H20zM22,30h5v1H22zM32,30h1v1H32zM34,30h1v1H34zM37,30h2v1H37zM40,30h1v1H40zM4,31h1v1H4zM9,31h1v1H9zM13,31h4v1H13zM18,31h2v1H18zM24,31h3v1H24zM29,31h2v1H29zM32,31h1v1H32zM34,31h1v1H34zM39,31h2v1H39zM4,32h1v1H4zM6,32h1v1H6zM10,32h1v1H10zM12,32h2v1H12zM16,32h1v1H16zM21,32h2v1H21zM24,32h1v1H24zM27,32h2v1H27zM30,32h8v1H30zM40,32h1v1H40zM12,33h3v1H12zM20,33h1v1H20zM26,33h1v1H26zM28,33h2v1H28zM31,33h2v1H31zM36,33h3v1H36zM40,33h1v1H40zM4,34h7v1H4zM12,34h3v1H12zM18,34h3v1H18zM23,34h1v1H23zM25,34h5v1H25zM32,34h1v1H32zM34,34h1v1H34zM36,34h3v1H36zM40,34h1v1H40zM4,35h1v1H4zM10,35h1v1H10zM12,35h1v1H12zM14,35h1v1H14zM16,35h9v1H16zM29,35h1v1H29zM31,35h2v1H31zM36,35h3v1H36zM40,35h1v1H40zM4,36h1v1H4zM6,36h3v1H6zM10,36h1v1H10zM12,36h3v1H12zM16,36h1v1H16zM18,36h1v1H18zM23,36h1v1H23zM25,36h4v1H25zM31,36h6v1H31zM38,36h1v1H38zM40,36h1v1H40zM4,37h1v1H4zM6,37h3v1H6zM10,37h1v1H10zM12,37h3v1H12zM16,37h2v1H16zM20,37h1v1H20zM22,37h1v1H22zM25,37h3v1H25zM29,37h1v1H29zM32,37h1v1H32zM36,37h1v1H36zM38,37h1v1H38zM40,37h1v1H40zM4,38h1v1H4zM6,38h3v1H6zM10,38h1v1H10zM14,38h3v1H14zM18,38h8v1H18zM27,38h1v1H27zM30,38h5v1H30zM38,38h3v1H38zM4,39h1v1H4zM10,39h1v1H10zM17,39h2v1H17zM20,39h5v1H20zM26,39h4v1H26zM31,39h4v1H31zM37,39h2v1H37zM40,39h1v1H40zM4,40h7v1H4zM12,40h1v1H12zM16,40h1v1H16zM19,40h1v1H19zM21,40h1v1H21zM24,40h2v1H24zM27,40h1v1H27zM29,40h4v1H29zM34,40h3v1H34zM39,40h2v1H39z"/></svg>`;
 
-</body>
+document.getElementById("paymentQR").src =
+  "data:image/svg+xml;charset=utf-8," + encodeURIComponent(qrSvg);
+</script></body>
 </html>
-    
